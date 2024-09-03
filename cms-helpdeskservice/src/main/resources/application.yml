@@ -1,0 +1,36 @@
+server:
+#  address: 192.168.249.60
+  port: 9091
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5434/CDL_Test
+    username: postgres
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: cms-helpdeskservice
+  rabbitmq:  
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest   
+    routingkey: emailDataBean.routingkey
+    queue:  emailDataBean.queue
+    exchange: emailDataBean.exchange
+employee:
+      fetchAPI: http://192.168.249.45:9091/open/fileByDocId/
+      postAPI: http://192.168.249.45:9091/upload/doc/
+      downloadMultipleFiles: http://192.168.249.45:9091/download/multiple/files
+      uploaddirectory : root-help_ticketing              
+    
+
+
+
+  

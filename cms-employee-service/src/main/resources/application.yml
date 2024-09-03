@@ -1,0 +1,73 @@
+spring:
+  application:
+    name : cms-employee-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: root
+    url: jdbc:postgresql://localhost:5434/employee
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  codec:
+    max-in-memory-size: 5MB
+  http:
+    multipart:
+      max-file-size: 15MB
+      max-request-size: 15MB
+  webflux:
+    client:
+      max-in-memory-size: 15MB
+      connection-timeout: 5000ms
+
+reactor:
+  netty:
+    io:
+      select-strategy: default
+      worker-count: 8
+
+server:
+  port: 8086
+
+
+
+
+
+
+
+employee:
+  document:
+    fetch:
+      API: http://localhost:9091/open/fileByDocId/
+    post:
+      API: http://localhost:9091/upload/doc/
+    upload:
+      directory : root-employee_document
+    delete:
+      API: http://localhost:9091/delete/file/api/
+    update:
+      API: http://localhost:9091/updatedoc/from/other/service/
+
+company:
+  policy:
+    path : root-Company Policies
+    files:
+      API : http://localhost:9091/get/comPoly
+    openFile:
+      API : http://localhost:9091/open/companyPolicies/
+
+myDocuments:
+  API : http://localhost:9091/get/myDocs/
+
+user:
+  fetch:
+    byUserIdAPI: http://localhost:8505/user/get/
+    getAllUserAPI: http://localhost:8505/user/getAll
+    byLocationAPI: http://localhost:8505/user/get/by/location/
+

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!--<html lang="en" xmlns="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:th="http://www.thymeleaf.org">-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HelpTicketMail</title>
+</head>
+<body>
+
+
+<div style="background-color: powderblue; height:300px;  width:500px; text-align:justify; " >
+	
+	
+	
+	<br><br><b th:text="${body}" style="text-align:left;"> Hi Venkat    </b>
+	
+	<p>  <img  th:src="@{~/images/insta.png}" alt="test" />
+		
+Although the web is the main platform for OAuth 2, the specification also describes	
+		how to handle this kind of delegated access to other client types (browser-based applications, server-side web applications, native/mobile apps, connected devices, etc.)
+	
+
+	</p>
+	<p>  <!--<img  th:src="@{/images/fo.jpg}" >-->
+		
+		Although the web is the main platform for OAuth 2, the specification also describes
+		how to handle this kind of delegated access to other client types (browser-based applications, server-side web applications, native/mobile apps, connected devices, etc.)
+
+
+	</p>
+	
+</div><br><br>
+	
+
+<!--<p> Me-->
+<!--     <img src="Ticket.png" th:src="|cid:${imagename}|"/>-->
+<!-- </p>-->
+
+
+<!--<div> Your username is <b th:text="${user.username}"></b></div>-->
+</body>
+</html>
